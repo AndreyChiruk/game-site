@@ -94,20 +94,13 @@
         </div>
 
         <div class="burger-menu-wrapper">
-            <a href="./index.html" class="burger-menu-link-a">
-                CHorse games
-            </a> <a href="./our-team.html" class="burger-menu-link-a">
-                Our Team
+            <a id="scrollButton" href="/index.html#targetElement" class="burger-menu-link-a">
+                About
             </a>
-            <a href="./careers.html" class="burger-menu-link-a">
-                Careers
-            </a>
-            <a href="./contact-us.html" class="burger-menu-link-a">
-                Contact Us
-            </a>
-
+            <a href="/classic-domino.html" class="burger-menu-link-a">Classic Dominoes</a>
+            <a href="/mahjong-relax.html" class="burger-menu-link-a">Mahjong Relax</a>
+            <a href="/black-hole.html" class="burger-menu-link-a">Black Hole</a>
         </div>
-
         <div class="main-nav__soc-links-wrapper">
             <a href="https://business.facebook.com/CHorse-Games-112337441284233/?business_id=272132508110098">
                 <div class="soc-link-img-wrapper">
@@ -160,14 +153,14 @@
                     </h2>
                     <div class="game-links-wrapper">
                         <a target="_blank" href="https://apps.apple.com/app/id6443935421 " class="appstore-link">
-                            <img src="./img/AppStoreGame.svg" alt="AppStore" class="game-link-img">
+                            <img src="./img/AppleStoreGame.png" alt="AppStore" class="game-link-img">
                         </a>
                         <a target="_blank" href="https://play.google.com/store/apps/details?id=com.ich.mahjongrelax" class="gp-link">
-                            <img src="./img/GooglePlayGame.svg" alt="Gp" class="game-link-img">
+                            <img src="./img/GooglePlayGame.png" alt="Gp" class="game-link-img">
                         </a>
                     </div>
-                    <div class="game-gallery">
-                        <img class="game-gallery__images" src="img/MahjongRelax/MJ_Sreenshot_1.jpg" alt="">
+                    <div class="game-gallery" id="game-gallery">
+                        <img class="game-gallery__images active" src="img/MahjongRelax/MJ_Sreenshot_1.jpg" alt="">
                         <img class="game-gallery__images" src="img/MahjongRelax/MJ_Sreenshot_2.jpg" alt="">
                         <img class="game-gallery__images" src="img/MahjongRelax/MJ_Sreenshot_3.jpg" alt="">
                         <img class="game-gallery__images" src="img/MahjongRelax/MJ_Sreenshot_4.jpg" alt="">
@@ -244,10 +237,10 @@
                     </p>
                     <div class="game-links-wrapper">
                         <a target="_blank" href="https://apps.apple.com/me/app/mahjong-memory-training/id1596081966" class="appstore-link">
-                            <img src="./img/AppStoreGame.svg" alt="AppStore" class="game-link-img">
+                            <img src="./img/AppleStoreGame.png" alt="AppStore" class="game-link-img">
                         </a>
                         <a target="_blank" href="https://play.google.com/store/apps/details?id=com.chorse.mahjongmemory&amp;gl=GB" class="gp-link">
-                            <img src="./img/GooglePlayGame.svg" alt="Gp" class="game-link-img">
+                            <img src="./img/GooglePlayGame.png" alt="Gp" class="game-link-img">
                         </a>
                     </div>
                 </div>
@@ -288,12 +281,24 @@
         });
         let burgerBtn = document.querySelector(".mobile-burger-wrapper");
         let closeBtn = document.querySelector(".close-btn");
+        let scrollButton = document.querySelector("#scrollButton");
+
         burgerBtn.addEventListener("click", function () {
             $(".modal-window-wrapper").show();
         });
+
         closeBtn.addEventListener("click", function () {
             $(".modal-window-wrapper").hide();
         });
+
+        scrollButton.addEventListener("click", function () {
+            $(".modal-window-wrapper").hide();
+        });
+        
+
+
+
+
     </script>
     <script src="./script.js"> </script>
 </body>

@@ -97,18 +97,12 @@
         </div>
 
         <div class="burger-menu-wrapper">
-            <a href="./index.html" class="burger-menu-link-a">
-                CHorse games
-            </a> <a href="./our-team.html" class="burger-menu-link-a">
-                Our Team
+            <a id="scrollButton" href="/index.html#targetElement" class="burger-menu-link-a">
+                About
             </a>
-            <a href="./careers.html" class="burger-menu-link-a">
-                Careers
-            </a>
-            <a href="./contact-us.html" class="burger-menu-link-a">
-                Contact Us
-            </a>
-
+            <a href="/classic-domino.html" class="burger-menu-link-a">Classic Dominoes</a>
+            <a href="/mahjong-relax.html" class="burger-menu-link-a">Mahjong Relax</a>
+            <a href="/black-hole.html" class="burger-menu-link-a">Black Hole</a>
         </div>
 
         <div class="main-nav__soc-links-wrapper">
@@ -137,7 +131,7 @@
     </div>
     <div class="ss-container">
         <div class="ss-item ss-loop active first-page" style="background-color: #413B6F">
-            <div class="width-wrapper ">
+            <div class="width-wrapper">
                 <div class="down-section">
                     <a class="down-section__link" href="./T&C.html">
                         Terms & Conditions
@@ -160,19 +154,19 @@
                 </div>
                 <div class="second-page__main">
                     <div class="second-page__main-line">
-                        <div class="second-page__block">
+                        <div class="second-page__block game-first" data-url="black-hole.html">
                             <h3 class="about-chorse-big card-title">Black Hole</h3>
                             <p class="about-chorse-min card-subtitle">Collect items, gain power and defeat every enemy in the Attack Hole…</p>
                             <a href="black-hole.html"><button class="second-page__card-btn card-btn">Learn More</button></a>
                         </div>
-                        <div class="second-page__block">
+                        <div class="second-page__block game-second" data-url="classic-domino.html">
                             <h3 class="about-chorse-big card-title">Classic Domino</h3>
                             <p class="about-chorse-min card-subtitle">Have fun and improve your mental skills with the Domino's 3 exciting game modes</p>
                             <a href="classic-domino.html"><button class="second-page__card-btn card-btn">Learn More</button></a>
                         </div>
                     </div>
                     <div class="second-page__main-line">
-                        <div class="second-page__block">
+                        <div class="second-page__block game-third" data-url="mahjong-relax.html">
                             <h3 class="about-chorse-big card-title">Mahjong Relax</h3>
                             <p class="about-chorse-min card-subtitle">Enjoy a relaxing and meditative gameplay of a free mahjong solitaire game.</p>
                             <a href="mahjong-relax.html"><button class="second-page__card-btn card-btn">Learn More</button></a>
@@ -195,41 +189,42 @@
             </div>
         </div>
         <div class="ss-item ss-loop third-page" style="background-color: #2E2FE3;" id="info">
-            <div class="about-chorse-wrapper">
-                <h2 class="about-chorse-big about-chorse-big-top">
-                    ABOUT C-Horse Games
-                </h2>
-                <p class="about-chorse-min-left">
-                    At first, working together on mobile games was just a vague idea, but in 2021 we gradually became obsessed with it. We took a year to learn the main syntax of C#, Unity Engine, Adobe Products, Data Analytics and every day we continue growing in those areas. We have also built trustful connections in the industry and working with amazing people on a day-to-day basis.
-                </p>
-                <p class="about-chorse-min-left">
-                    We are just at the beginning of our journey but we hope you will enjoy our games. Despite a lot left to learn, we can truly guarantee that we invest a lot of personality and love in them.
-                </p>
-                <p class="about-chorse-min-left">
-                    We hope to share fun and good vibes with you, and from the bottom of our hearts - thank you for choosing CHorse Games!
-                </p>
-                <h2 class="about-chorse-big about-chorse-big-top">
-                    HIRING PROCESS
-                </h2>
-                <p class="about-chorse-min-left">
-                    We love our job and generally set high standards for our peer group. If you are
-                </p>
-                <ul class="addition-page-points-wrapper">
-                    <li class="addition-page-point">Unity Developer</li>
-                    <li class="addition-page-point">2D / 3D / Animation artist</li>
-                    <li class="addition-page-point">UA Manager</li>
-                    <li class="addition-page-point">Project Manager in GameDev</li>
-                    <li class="addition-page-point">Data analyst</li>
-                </ul>
-                <p class="about-chorse-min-left">Please, do not hesitate to send us your CV at <a href="mailto:careers@chorsegames.co.uk" class="ad-pages-link">careers@chorsegames.co.uk.</a> We are not hiring full-time at the moment, but we hope to grow in 2022 and we also work with a lot of talented individuals on a short-contract basis.</p>
-                <h2 class="about-chorse-big about-chorse-big-top">
-                    CONTACT US
-                </h2>
-                <p class="about-chorse-min">
-                    Regarding any technical difficulty please feel free to contact our Google
-Play and iOS Stores support team at &nbsp <a href="mailto:careers@chorsegames.co.uk" class="ad-pages-link">careers@chorsegames.co.uk.</a>
-                </p>
-
+            <div class="about-chorse-wrapper" id="targetElement">
+                <div class="about-chorse-min-text">
+                    <h2 class="about-chorse-big about-chorse-big-top">
+                        ABOUT C-Horse Games
+                    </h2>
+                    <p class="about-chorse-min-left">
+                        At first, working together on mobile games was just a vague idea, but in 2021 we gradually became obsessed with it. We took a year to learn the main syntax of C#, Unity Engine, Adobe Products, Data Analytics and every day we continue growing in those areas. We have also built trustful connections in the industry and working with amazing people on a day-to-day basis.
+                    </p>
+                    <p class="about-chorse-min-left">
+                        We are just at the beginning of our journey but we hope you will enjoy our games. Despite a lot left to learn, we can truly guarantee that we invest a lot of personality and love in them.
+                    </p>
+                    <p class="about-chorse-min-left">
+                        We hope to share fun and good vibes with you, and from the bottom of our hearts - thank you for choosing CHorse Games!
+                    </p>
+                    <h2 class="about-chorse-big about-chorse-big-top">
+                        HIRING PROCESS
+                    </h2>
+                    <p class="about-chorse-min-left">
+                        We love our job and generally set high standards for our peer group. If you are
+                    </p>
+                    <ul class="addition-page-points-wrapper">
+                        <li class="addition-page-point">Unity Developer</li>
+                        <li class="addition-page-point">2D / 3D / Animation artist</li>
+                        <li class="addition-page-point">UA Manager</li>
+                        <li class="addition-page-point">Project Manager in GameDev</li>
+                        <li class="addition-page-point">Data analyst</li>
+                    </ul>
+                    <p class="about-chorse-min-left">Please, do not hesitate to send us your CV at <a href="mailto:careers@chorsegames.co.uk" class="ad-pages-link">careers@chorsegames.co.uk.</a> We are not hiring full-time at the moment, but we hope to grow in 2022 and we also work with a lot of talented individuals on a short-contract basis.</p>
+                    <h2 class="about-chorse-big about-chorse-big-top">
+                        CONTACT US
+                    </h2>
+                    <p class="about-chorse-min-left">
+                        Regarding any technical difficulty please feel free to contact our Google
+    Play and iOS Stores support team at &nbsp <a href="mailto:careers@chorsegames.co.uk" class="ad-pages-link">careers@chorsegames.co.uk.</a>
+                    </p>
+                </div>
             </div>
 
 
@@ -252,6 +247,38 @@ Play and iOS Stores support team at &nbsp <a href="mailto:careers@chorsegames.co
     <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
     <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
     <script>
+        let burgerBtn = document.querySelector(".mobile-burger-wrapper");
+        let closeBtn = document.querySelector(".close-btn");
+        let scrollButton = document.querySelector("#scrollButton");
+
+        burgerBtn.addEventListener("click", function () {
+            $(".modal-window-wrapper").show();
+        });
+
+        closeBtn.addEventListener("click", function () {
+            $(".modal-window-wrapper").hide();
+        });
+
+        scrollButton.addEventListener("click", function () {
+            $(".modal-window-wrapper").hide();
+        });
+
+        $(document).ready(function() {
+            // Функция для проверки ширины окна
+            function checkWindowSize() {
+                return $(window).width() <= 840;
+            }
+
+            // Обработчик клика по элементу
+            $('.second-page__block').on('click', function() {
+                if (checkWindowSize()) {
+                    // Получаем URL из атрибута data-url
+                    var url = $(this).data('url');
+                    // Переход на другую страницу
+                    window.location.href = url;
+                }
+            });
+        });
         function swipeUp(element) {
             const startY = 200; // начальная позиция по оси Y
             const endY = 100; // конечная позиция по оси Y
@@ -350,6 +377,7 @@ Play and iOS Stores support team at &nbsp <a href="mailto:careers@chorsegames.co
     </script>
     <script src="./script.js"> </script>
     <!-- .slick-active -->
+     
 </body>
 
 </html>

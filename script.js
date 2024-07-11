@@ -1,11 +1,46 @@
+document.addEventListener('DOMContentLoaded', () => {
+  if (window.innerWidth <= 1130) {
+    const images = document.querySelectorAll('.game-gallery__images');
+    let currentIndex = 0;
+    let startX, endX;
+
+    function showImage(index) {
+      images.forEach((img, i) => {
+        img.classList.toggle('active', i === index);
+      });
+    }
+
+    function handleSwipe() {
+      if (startX > endX) {
+        currentIndex = (currentIndex + 1) % images.length;
+      } else if (startX < endX) {
+        currentIndex = (currentIndex - 1 + images.length) % images.length;
+      }
+      showImage(currentIndex);
+    }
+
+    document.getElementById('game-gallery').addEventListener('touchstart', (event) => {
+      startX = event.touches[0].clientX;
+    });
+
+    document.getElementById('game-gallery').addEventListener('touchend', (event) => {
+      endX = event.changedTouches[0].clientX;
+      handleSwipe();
+    });
+
+    showImage(currentIndex);
+  }
+});
+
 if (window.innerWidth >= 1000) {
-  let scrollCouner = 0;
-  let scrollCouner1 = 0;
+  let scrollCounter = 0;
+  let scrollCounter1 = 0;
 
   function scrollSlide(args) {
-    //args.container, args.item, args.animType, args.duration, args.delay, args.uncutMove
+    // args.container, args.item, args.animType, args.duration, args.delay, args.uncutMove
     const scrollContainerEle = document.querySelector(args.container);
     const scrollItems = Array.from(document.querySelectorAll(`${args.container} ${args.item}`));
+    const secondPageMain = document.querySelector('.second-page__main');
 
     let allowAnimation = true;
     let allowAnimationTimeout;
@@ -18,21 +53,12 @@ if (window.innerWidth >= 1000) {
       });
     }
 
-    function addLoppAnimClasses() {
+    function addLoopAnimClasses() {
       let activeItem = scrollItems.find((item) => item.classList.contains("active"));
 
-      let nextItem = scrollItems[scrollItems.indexOf(activeItem) + 1];
-      let prevItem = scrollItems[scrollItems.indexOf(activeItem) - 1];
+      let nextItem = scrollItems[scrollItems.indexOf(activeItem) + 1] || scrollItems[0];
+      let prevItem = scrollItems[scrollItems.indexOf(activeItem) - 1] || scrollItems[scrollItems.length - 1];
 
-      if (!nextItem) {
-        nextItem = scrollItems[0];
-      }
-
-      if (!prevItem) {
-        prevItem = scrollItems[scrollItems.length - 1];
-      }
-
-      console.log("%c Remove Classes", "background-color: red;");
       scrollItems.forEach((item) => {
         item.classList.remove("ss-move-prev");
         item.classList.remove("ss-move-next");
@@ -40,24 +66,6 @@ if (window.innerWidth >= 1000) {
 
       nextItem.classList.add("ss-move-next");
       prevItem.classList.add("ss-move-prev");
-      
-      scrollCouner++;
-      if (scrollCouner > 1) {
-        function fade() {
-          document.querySelector(".show-wrapper").classList.add("animate__animated", "animate__fadeIn", "animate__slower");
-          scrollCouner = 1;
-        }
-        setTimeout(fade, 100);
-      }
-
-      scrollCouner1++;
-      if (scrollCouner1 > 2) {
-        function fade1() {
-          document.querySelector(".about-chorse-wrapper").classList.add("animate__animated", "animate__fadeIn", "animate__slower");
-          scrollCouner1 = 1;
-        }
-        setTimeout(fade1, 100);
-      }
     }
 
     function addAnimationDuration() {
@@ -89,48 +97,29 @@ if (window.innerWidth >= 1000) {
       let nextItem;
 
       if (moveDown) {
-        nextItem = scrollItems[scrollItems.indexOf(activeItem) + 1];
+        nextItem = scrollItems[scrollItems.indexOf(activeItem) + 1] || scrollItems[0];
       } else {
-        nextItem = scrollItems[scrollItems.indexOf(activeItem) - 1];
+        nextItem = scrollItems[scrollItems.indexOf(activeItem) - 1] || scrollItems[scrollItems.length - 1];
       }
 
-      if (nextItem) {
-        activeItem.classList.add("ss-moving");
-        nextItem.classList.add("ss-moving");
-        activeItem.classList.remove("active");
-        nextItem.classList.add("active");
-        nextItem.classList.add("active");
+      activeItem.classList.remove("active");
+      nextItem.classList.add("active");
 
-        if (args.uncutMove) {
-          addLoppAnimClasses();
-        }
-      } else {
-        activeItem.classList.add("ss-moving");
-        activeItem.classList.remove("active");
-
-        if (moveDown) {
-          scrollItems[0].classList.add("ss-moving");
-          scrollItems[0].classList.add("active");
-
-          if (args.uncutMove) {
-            addLoppAnimClasses();
-          }
-        } else {
-          scrollItems[scrollItems.length - 1].classList.add("ss-moving");
-          scrollItems[scrollItems.length - 1].classList.add("active");
-
-          if (args.uncutMove) {
-            addLoppAnimClasses();
-          }
-        }
+      if (args.uncutMove) {
+        addLoopAnimClasses();
       }
+    }
+
+    // Check if secondPageMain exists and if it has overflow
+    function hasOverflow(element) {
+      return element.scrollHeight > element.clientHeight;
     }
 
     // NOTE:
     // INNER FUNCTION CALLS
     addAnimationClasses();
     if (args.uncutMove) {
-      addLoppAnimClasses();
+      addLoopAnimClasses();
     }
     addAnimationDuration();
 
@@ -145,13 +134,20 @@ if (window.innerWidth >= 1000) {
       } else {
         eventType = "wheel";
       }
+
       scrollContainerEle.addEventListener(eventType, function (event) {
         let scrollTop = scrollContainerEle.scrollTop,
-          scrollHeight = scrollContainerEle.scrollHeight,
-          height = scrollContainerEle.clientHeight;
+            scrollHeight = scrollContainerEle.scrollHeight,
+            height = scrollContainerEle.clientHeight;
 
         let delta = event.wheelDelta ? event.wheelDelta : -(event.detail || 0);
-        // console.log(`scrollTop ${screenTop}  height ${height} scrollHeight ${scrollHeight}`)
+
+        // Check if secondPageMain exists and has overflow
+        if (secondPageMain && hasOverflow(secondPageMain)) {
+          // Let the default scroll behavior happen inside secondPageMain
+          return;
+        }
+
         if ((delta > 0 && scrollTop - delta <= 0) || (delta < 0 && scrollTop + height >= scrollHeight - 1)) {
           if (delta > 0) {
             if (allowAnimation) {
@@ -187,6 +183,8 @@ if (window.innerWidth >= 1000) {
     delay: 0,
     uncutMove: true,
   });
+
+
 
   document.addEventListener("DOMContentLoaded", function() {
     // Function to execute the desired actions
@@ -228,7 +226,9 @@ if (window.innerWidth >= 1000) {
 
 
 
+
 } else {
   //не выполнять
 }
+
 

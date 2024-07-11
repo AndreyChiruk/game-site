@@ -94,18 +94,12 @@
         </div>
 
         <div class="burger-menu-wrapper">
-            <a href="./index.html" class="burger-menu-link-a">
-                CHorse games
-            </a> <a href="./our-team.html" class="burger-menu-link-a">
-                Our Team
+            <a id="scrollButton" href="/index.html#targetElement" class="burger-menu-link-a">
+                About
             </a>
-            <a href="./careers.html" class="burger-menu-link-a">
-                Careers
-            </a>
-            <a href="./contact-us.html" class="burger-menu-link-a">
-                Contact Us
-            </a>
-
+            <a href="/classic-domino.html" class="burger-menu-link-a">Classic Dominoes</a>
+            <a href="/mahjong-relax.html" class="burger-menu-link-a">Mahjong Relax</a>
+            <a href="/black-hole.html" class="burger-menu-link-a">Black Hole</a>
         </div>
 
         <div class="main-nav__soc-links-wrapper">
@@ -159,14 +153,11 @@
                         Black Hole
                     </h2>
                     <div class="game-links-wrapper">
-                        <a href="#" style="pointer-events: none; opacity: 0.5;" class="appstore-link">
-                            <img src="./img/AppStoreGame.svg" alt="AppStore" class="game-link-img">
-                        </a>
                         <a target="_blank" href="https://play.google.com/store/apps/details?id=com.chorse.attackhole" class="gp-link">
-                            <img src="./img/GooglePlayGame.svg" alt="Gp" class="game-link-img">
+                            <img src="./img/GooglePlayGame.png" alt="Gp" class="game-link-img">
                         </a>
                     </div>
-                    <div class="game-gallery">
+                    <div class="game-gallery" id="game-gallery">
                         <img class="game-gallery__images" src="img/BlackHole/AH_Screenshot_1.png" alt="">
                         <img class="game-gallery__images" src="img/BlackHole/AH_Screenshot_2.png" alt="">
                         <img class="game-gallery__images" src="img/BlackHole/AH_Screenshot_3.png" alt="">
@@ -230,11 +221,8 @@
                     Are you ready for the challenge? The time has come to play Attack Hole and showcase your mastery over the black hole. Engage in an intense battle, feed your insatiable appetite, and emerge victorious. The fate of the world lies in your hands, and it's up to you to become the ultimate hero of the black hole!
                     </p>
                     <div class="game-links-wrapper">
-                        <a href="#" style="pointer-events: none; opacity: 0.5;" class="appstore-link">
-                            <img src="./img/AppStoreGame.svg" alt="AppStore" class="game-link-img">
-                        </a>
                         <a target="_blank" href="https://play.google.com/store/apps/details?id=com.chorse.attackhole" class="gp-link">
-                            <img src="./img/GooglePlayGame.svg" alt="Gp" class="game-link-img">
+                            <img src="./img/GooglePlayGame.png" alt="Gp" class="game-link-img">
                         </a>
                     </div>
                 </div>
@@ -275,10 +263,17 @@
         });
         let burgerBtn = document.querySelector(".mobile-burger-wrapper");
         let closeBtn = document.querySelector(".close-btn");
+        let scrollButton = document.querySelector("#scrollButton");
+
         burgerBtn.addEventListener("click", function () {
             $(".modal-window-wrapper").show();
         });
+
         closeBtn.addEventListener("click", function () {
+            $(".modal-window-wrapper").hide();
+        });
+
+        scrollButton.addEventListener("click", function () {
             $(".modal-window-wrapper").hide();
         });
     </script>
