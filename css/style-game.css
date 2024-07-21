@@ -1,0 +1,74 @@
+@media (max-width: 1000000px){
+    .ss-container {
+        position: relative;
+        overflow: scroll;
+        height: initial;
+        width: 100%;
+    }
+
+    .ss-container .ss-item {
+        position: relative;
+        z-index: 1;
+        height: 100vh;
+        width: 100%;
+        transition-timing-function: ease-in-out;
+    }
+
+
+
+    .ss-container .ss-item.ss-move-up.active {
+        top: initial;
+        z-index: initial !important;
+    }
+
+    .ss-container .ss-item.ss-move-down {
+        top: initial;
+    }
+
+    .ss-container .ss-item.ss-move-down.ss-move-next {
+        top: initial;
+    }
+
+    .ss-container .ss-item.ss-move-down.ss-move-prev {
+        top: initial;
+    }
+
+    .ss-container .ss-item.ss-move-down.active {
+        top: initial;
+        z-index: initial !important;
+    }
+
+    .ss-container .ss-item.ss-move-right {
+        right: initial;
+    }
+
+    .ss-container .ss-item.ss-move-right.ss-move-next {
+        right: initial;
+    }
+
+    .ss-container .ss-item.ss-move-right.ss-move-prev {
+        right: initial;
+    }
+
+    .ss-container .ss-item.ss-move-right.active {
+        right: initial !important;
+        z-index: initial !important;
+    }
+
+    .ss-container .ss-item.ss-move-left {
+        right: initial;
+    }
+
+    .ss-container .ss-item.ss-move-left.ss-move-next {
+        right: initial;
+    }
+
+    .ss-container .ss-item.ss-move-left.ss-move-prev {
+        right: initial;
+    }
+
+    .ss-container .ss-item.ss-move-left.active {
+        right: initial;
+        z-index: initial !important;
+    }
+}
