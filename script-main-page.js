@@ -311,17 +311,26 @@ if (window.innerWidth >= 1000) {
   }
   $(document).ready(function() {
     var resizeTimeout;
+    var initialWidth = $(window).width();
 
     $(window).resize(function() {
-        // Если таймер уже существует, отменяем его
-        if (resizeTimeout) {
-            clearTimeout(resizeTimeout);
-        }
+        var newWidth = $(window).width();
 
-        // Устанавливаем новый таймер для перезагрузки страницы через 500 миллисекунд после последнего изменения размера окна
-        resizeTimeout = setTimeout(function() {
-            location.reload();
-        }, 100);
+        // Проверяем, изменялась ли ширина окна
+        if (newWidth !== initialWidth) {
+            // Обновляем начальную ширину
+            initialWidth = newWidth;
+
+            // Если таймер уже существует, отменяем его
+            if (resizeTimeout) {
+                clearTimeout(resizeTimeout);
+            }
+
+            // Устанавливаем новый таймер для перезагрузки страницы через 100 миллисекунд после последнего изменения размера окна
+            resizeTimeout = setTimeout(function() {
+                location.reload();
+            }, 100);
+        }
     });
 });
   

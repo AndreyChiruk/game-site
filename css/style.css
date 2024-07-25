@@ -278,36 +278,46 @@ body {
 .second-page__block:hover .card-btn {
     opacity: 1;
 }
-.game-first{
+.game-styles, .game-styles:hover{
     border-radius: 46px;
-    background: url(/img/BlackHole/AH_Banner.png);
     background-size: 601px 285px;
+}
+
+
+.game-first{
+    background: url(/img/BlackHole/AH_Banner.png);
 }
 .game-first:hover {
-    border-radius: 46px;
     background-image: linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.7)), url(/img/BlackHole/AH_Banner.png);
-    background-size: 601px 285px;
 }
+
+
 .game-second{
-    border-radius: 46px;
     background: url(/img/ClassicDomino/DO_Banner.png);
-    background-size: 601px 285px;
 }
 .game-second:hover {
-    border-radius: 46px;
     background-image: linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.7)), url(/img/ClassicDomino/DO_Banner.png);
-    background-size: 601px 285px;
 }
+
+
 .game-third{
-    border-radius: 46px;
     background: url(/img/MahjongRelax/MJ_Banner.png);
-    background-size: 601px 285px;
 }
 .game-third:hover {
-    border-radius: 46px;
     background-image: linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.7)), url(/img/MahjongRelax/MJ_Banner.png);
-    background-size: 601px 285px;
 }
+
+/* Стили к карточке */
+
+.game-fourth{
+    background: url(/img/FindTheDifference/FD_banner.png);
+}
+ 
+.game-fourth:hover {
+    background-image: linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.7)), url(/img/FindTheDifference/FD_banner.png);
+}
+
+
 .down-section {
     display: flex;
     justify-content: space-between;
@@ -701,10 +711,20 @@ body {
 .down-section__mobile{
     display: none;
 }
-.game-first,
-.game-second,
-.game-third{
+.game-styles{
     background-position: center;
+    border-radius: 46px;
+    background-size: 601px 285px;
+}
+.two-elements{
+    justify-content: space-between !important;
+}
+.one-element{
+    justify-content: center;
+}
+.find-dif{
+    text-wrap: nowrap;
+    font-size: 50px;
 }
 @media (max-width: 1000px) {
     .game-text{
@@ -1187,13 +1207,28 @@ body {
     }
 }
 @media (max-width: 640px) {
-    .second-page__block, .game-first:hover, .game-second:hover, .game-third:hover{
+    .second-page__block, .game-styles:hover{
         background-position: center !important;
         width: calc(100% - 20px) !important;
-        height: 200px;
+        height: 150px;
         background-size: contain !important;
         background-repeat: no-repeat !important;
     }
+    .game-first:hover {
+        background: url(/img/BlackHole/AH_Banner.png);
+        width: 100%;
+    }
+    .game-second:hover {
+        background: url(/img/ClassicDomino/DO_Banner.png);
+    }
+    .game-third:hover {
+        background: url(/img/MahjongRelax/MJ_Banner.png);
+    }
+    /* Фон карточки при наведении такой же как и активный */
+    .game-fourth:hover {
+        background: url(/img/FindTheDifference/FD_banner.png);
+    }
+
 }
 @media (max-width: 450px) {
     :target{scroll-margin-top:100px;}
@@ -1759,10 +1794,9 @@ body {
     color: white;
     text-decoration: none;
     display: block;
-}
-.dropdown-content a:nth-child(2), .dropdown-content a:nth-child(3){
     padding-top: 10px;
 }
+
 @media (max-device-height: 1480px){
     .second-page__main {
         max-height: 1020px;
